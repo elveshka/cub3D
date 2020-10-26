@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="cub3d_res"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/esnowbal/projects/cub3d_res/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/esnowbal/projects/cub3d_res/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/esnowbal/projects/cub3d_res/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cub3d_res">
+				<Option output="/Users/esnowbal/projects/cub3d_res/cmake-build-debug/cub3d_res" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/esnowbal/projects/cub3d_res/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/esnowbal/projects/cub3d_res/."/>
+					<Add directory="/Users/esnowbal/projects/cub3d_res/libft"/>
+					<Add directory="/Users/esnowbal/projects/cub3d_res/mlx"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 cub3d_res"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cub3d_res/fast">
+				<Option output="/Users/esnowbal/projects/cub3d_res/cmake-build-debug/cub3d_res" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/esnowbal/projects/cub3d_res/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/esnowbal/projects/cub3d_res/."/>
+					<Add directory="/Users/esnowbal/projects/cub3d_res/libft"/>
+					<Add directory="/Users/esnowbal/projects/cub3d_res/mlx"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 cub3d_res/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/esnowbal/projects/cub3d_res/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/create_trgb.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/cub3d.h">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/i_am_cub3d.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/i_am_map_parser.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/i_am_map_reader.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/i_am_parser.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/i_am_screenshot.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/i_am_sprite_engine.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/i_am_sprite_engine_utils.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/i_am_structure.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_atoi.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_bzero.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_calloc.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_isalnum.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_isalpha.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_isascii.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_isdigit.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_isprint.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_itoa.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_lstadd_back.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_lstadd_front.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_lstclear.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_lstdelone.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_lstiter.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_lstlast.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_lstmap.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_lstnew.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_lstsize.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_memccpy.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_memchr.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_memcmp.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_memcpy.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_memmove.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_memset.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_putchar_fd.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_putendl_fd.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_putnbr_fd.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_putstr_fd.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_split.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_strchr.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_strcmp.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_strdup.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_strjoin.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_strlcat.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_strlcpy.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_strlen.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_strmapi.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_strncmp.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_strnstr.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_strrchr.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_strtrim.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_substr.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_tolower.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/ft_toupper.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/get_next_line.c">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/libft/libft.h">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/mlx/mlx.h">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/s.cub">
+			<Option target="cub3d_res"/>
+		</Unit>
+		<Unit filename="/Users/esnowbal/projects/cub3d_res/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
