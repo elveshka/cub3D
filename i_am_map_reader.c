@@ -6,7 +6,7 @@
 /*   By: esnowbal <esnowbal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:25:12 by esnowbal          #+#    #+#             */
-/*   Updated: 2020/10/23 20:51:03 by esnowbal         ###   ########.fr       */
+/*   Updated: 2020/10/28 17:08:40 by esnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,129 +46,36 @@ static int		is_player_pos(t_map *structure, char **tmp, int *x, int *y)
 	return (1);
 }
 
-static int		line_count(char **map)
+int				map_check(t_map *structure, int i, int j, int flag)
 {
-	int i;
-
-	i = 0;
-	while(map[i++])
-		;
-	return (i - 1);
-}
-
-static int		max_line(char **mapp)
-{
-	int		res;
-	int		i;
-	char	**map;
-	char	*line;
-
-	map = mapp;
-	res = 0;
-	while (*map)
+	if (flag == 0)
 	{
-		i = 0;
-		line = *map;
-		while (*line)
-		{
-			i++;
-			line++;
-		}
-		res = (i > res) ? i : res;
-		map++;
-	}
-	return (res);
-}
-
-static void		space_fill(char **map, int max)
-{
-	char	**tmp_map;
-	char	*line;
-	int		i;
-
-	tmp_map = map;
-	while (*tmp_map)
-	{
-		if (ft_strlen(*tmp_map) < max)
-		{
-			line = *tmp_map;
-			*tmp_map = malloc(sizeof(char) * max + 1);
-			(*tmp_map)[max] = '\0';
-			i = -1;
-			while (line[++i])
-				(*tmp_map)[i] = line[i];
-			while (i < max)
-			{
-				(*tmp_map)[i] = ' ';
-				i++;
-			}
-			free(line);
-		}
-		tmp_map++;
-	}
-}
-
-static int		map_validating(t_map *structure)
-{
-	int		max_x;
-	int		max_y;
-	int		i;
-	int		j;
-
-	max_x = max_line(structure->map);
-	max_y = line_count(structure->map);
-	space_fill(structure->map, max_x);
-	i = 0;
-	while (i < max_x)
-	{
-		if ((structure->map[0][i] != '1' && structure->map[0][i] != ' ') \
-		|| (structure->map[max_y - 1][i] != ' ' \
-		&& structure->map[max_y - 1][i] != '1'))
-			return (0);
-		i++;
-	}
-	i = 0;
-	while (i < max_y)
-	{
-		if ((structure->map[i][0] != '1' && structure->map[i][0] != ' ') \
-		|| (structure->map[i][max_x - 1] != ' ' && \
-		structure->map[i][max_x - 1] != '1'))
-			return (0);
-		i++;
-	}
-	j = 1;
-	while (j < max_y)
-	{
-		i = 1;
-		while(i < max_x)
-		{
-			if (structure->map[j][i] == '0' && \
-			(structure->map[j - 1][i] == ' ' || \
+		if (structure->map[j][i] == '0' && (structure->map[j - 1][i] == ' ' || \
 			structure->map[j][i - 1] == ' ' || \
 			structure->map[j + 1][i] == ' ' || \
 			structure->map[j][i + 1] == '\0' || \
 			structure->map[j][i + 1] == ' '))
-				return (0);
-			else if (structure->map[j][i] == '2' && \
-			(structure->map[j - 1][i] == ' ' || \
+			return (0);
+	}
+	else if (flag == 1)
+	{
+		if (structure->map[j][i] == '2' && (structure->map[j - 1][i] == ' ' || \
 			structure->map[j][i - 1] == ' ' || \
 			structure->map[j + 1][i] == ' ' || \
 			structure->map[j][i + 1] == '\0' || \
 			structure->map[j][i + 1] == ' '))
-				return (0);
-			else if (structure->map[j][i] != '0' \
-			&& structure->map[j][i] != '1' \
-			&& structure->map[j][i] != '2' \
-			&& structure->map[j][i] != ' ')
-				return (0);
-			i++;
-		}
-		j++;
+			return (0);
+	}
+	else
+	{
+		if (structure->map[j][i] != '0' && structure->map[j][i] != '1' \
+			&& structure->map[j][i] != '2' && structure->map[j][i] != ' ')
+			return (0);
 	}
 	return (1);
 }
 
-int			i_am_map_reader(t_map *structure, char *map_in_line)
+int				i_am_map_reader(t_map *structure, char *map_in_line)
 {
 	int		x;
 	int		y;

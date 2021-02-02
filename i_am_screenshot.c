@@ -6,7 +6,7 @@
 /*   By: esnowbal <esnowbal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 22:32:01 by esnowbal          #+#    #+#             */
-/*   Updated: 2020/10/26 19:36:36 by esnowbal         ###   ########.fr       */
+/*   Updated: 2020/10/28 20:26:59 by esnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ void		screenshot(t_data *img)
 	int		y;
 
 	y = 0;
-	bmp = (char *)malloc(sizeof(int) * (img->structure->win_w * img->structure->win_h + 54));
+	bmp = (char *)malloc(sizeof(int) * \
+	(img->structure->win_w * img->structure->win_h + 54));
 	screen_shot(img, &bmp);
 	scrn = bmp + 54;
 	while (y < img->structure->win_h)
@@ -54,7 +55,8 @@ void		screenshot(t_data *img)
 		y++;
 	}
 	fd = open("screenshot.bmp", O_WRONLY | O_TRUNC | O_CREAT, 0666);
-	write(fd, bmp, sizeof(int) * (img->structure->win_w * img->structure->win_h) + 54);
+	write(fd, bmp, sizeof(int) * \
+	(img->structure->win_w * img->structure->win_h) + 54);
 	close(fd);
 	free(bmp);
 	bmp = NULL;

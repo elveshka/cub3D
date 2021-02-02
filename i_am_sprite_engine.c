@@ -6,13 +6,14 @@
 /*   By: esnowbal <esnowbal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 20:36:52 by esnowbal          #+#    #+#             */
-/*   Updated: 2020/10/24 22:32:48 by esnowbal         ###   ########.fr       */
+/*   Updated: 2020/10/28 23:11:08 by esnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static int	another_one_wall_finder (t_data *img, double c, double angle, int j)
+static int		another_one_wall_finder(t_data *img, \
+double c, double angle)
 {
 	double	xx;
 	double	yy;
@@ -45,15 +46,6 @@ static int		sprite_finded(t_data *img)
 	return (0);
 }
 
-static double	correctangle2(double angle, double player_facing)
-{
-	if (angle + M_PI_2 < player_facing)
-		return (angle + 2 * M_PI);
-	else if (angle - M_PI_2 > player_facing)
-		return (angle - 2 * M_PI);
-	return (angle);
-}
-
 static void		set_sprite(t_data *img)
 {
 	int		i;
@@ -72,78 +64,35 @@ static void		set_sprite(t_data *img)
 		img->structure->player_pos->player_facing);
 }
 
-static t_sprite	*sort(t_sprite *sprites, int num)
+void			dodge_norminette(t_data *img, int *i)
 {
-	int			i;
-	int			f;
-	t_sprite	tmp;
-
-	f = 1;
-	while (f > 0)
+	if (img->structure->map[(int)(img->structure->player_pos->yy)]\
+	[(int)(img->structure->player_pos->xx)] == '2' && \
+	sprite_finded(img) == 0)
 	{
-		f = 0;
-		i = -1;
-		while (++i < num - 1)
-		{
-			if (sprites[i].c < sprites[i + 1].c)
-			{
-				tmp = sprites[i + 1];
-				sprites[i + 1] = sprites[i];
-				sprites[i] = tmp;
-				f++;
-			}
-		}
-	}
-	return (sprites);
-}
-
-static void	sprite_painter(t_data *img, int num)
-{
-	int		c;
-
-	img->sprites = sort(img->sprites, num);
-	c = 0;
-	while (c < num)
-	{
-		if (img->sprites[c].c > 0.7)
-			putsprite(img, c);
-		c++;
+		set_sprite(img);
+		*i += 1;
 	}
 }
 
-void		sprite_finder(t_data *img, double angle)
+void			sprite_finder(t_data *img, double angle)
 {
 	int			j;
 	double		c;
 	int			i;
 
-	i = 0;
+	clear_sprites(img);
 	j = 0;
-	while (i < img->structure->sprite_num)
-	{
-		img->sprites[i].angle = 0;
-		img->sprites[i].y = 0;
-		img->sprites[i].x = 0;
-		img->sprites[i].c = 0;
-		i++;
-	}
 	i = 0;
 	while (j < img->structure->win_w)
 	{
-		angle = angle + ((M_PI / 3) / img->structure->win_w) * 5;
-		angle =correctangle(angle);
+		angle = correctangle(angle + ((M_PI / 3) / img->structure->win_w) * 5);
 		c = 0.000001;
-		while (!(another_one_wall_finder(img, c, angle, j)))
+		while (!(another_one_wall_finder(img, c, angle)))
 		{
 			epic_raycasting(&c, img->structure->player_pos->xx, \
 			img->structure->player_pos->yy, angle);
-			if (img->structure->map[(int)(img->structure->player_pos->yy)]\
-			[(int)(img->structure->player_pos->xx)] == '2' && \
-			sprite_finded(img) == 0)
-			{
-				set_sprite(img);
-				i++;
-			}
+			dodge_norminette(img, &i);
 		}
 		j += 5;
 	}

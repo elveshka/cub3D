@@ -6,36 +6,18 @@
 /*   By: esnowbal <esnowbal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 19:28:57 by esnowbal          #+#    #+#             */
-/*   Updated: 2020/10/24 21:11:27 by esnowbal         ###   ########.fr       */
+/*   Updated: 2020/10/28 22:03:34 by esnowbal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void			my_mlx_pixel_put(t_data *img, int x, int y, int color)
+int				get_t(int color)
 {
-	char	*dst;
-
-	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+	return (color & (0xFF << 24));
 }
 
-static int			get_collor(t_xpm *img, int x, int y)
-{
-	char	*dst;
-	int		color;
-
-	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel / 8));
-	color = *(int*)dst;
-	return (color);
-}
-
-int		get_t(int trgb)
-{
-	return (trgb & (0xFF << 24));
-}
-
-double		setcos(double mainangle, double angle)
+double			setcos(double mainangle, double angle)
 {
 	double cosin;
 
@@ -45,65 +27,43 @@ double		setcos(double mainangle, double angle)
 	return (cosin);
 }
 
-void		putlinesprite(t_data *img, int i, int l, double pixelhiegt)
+static void		put_line_sprite(t_data *img, int i, int l, double pixelheight)
 {
 	int k;
-	int collor;
+	int color;
 
-	k = 0;
-	while (k < img->structure->win_h)
+	k = (img->structure->win_h - pixelheight) / 2 + 1;
+	while (k < (img->structure->win_h - pixelheight) / 2 + pixelheight)
 	{
-		collor = get_collor(img->sprite, img->sprite->w \
-		* (l / pixelhiegt), img->sprite->h * \
-		((pixelhiegt - img->structure->win_h) / 2 + k) / pixelhiegt);
-		if (get_t(collor) == 0)
-			my_mlx_pixel_put(img, i + l, k, collor);
+		color = get_color(img->sprite, img->sprite->w \
+		* (l / pixelheight), img->sprite->h \
+		* (k - (img->structure->win_h - pixelheight) / 2) / pixelheight);
+		if (get_t(color) == 0)
+			pixel_put(img, i + l, k, color);
 		k++;
 	}
 }
 
-void		putlinebigsprite(t_data *img, int i, int l, double pixelhiegt)
-{
-	int k;
-	int collor;
-
-	k = (img->structure->win_h - pixelhiegt) / 2 + 1;
-	while (k < (img->structure->win_h - pixelhiegt) / 2 + pixelhiegt)
-	{
-		collor = get_collor(img->sprite, img->sprite->w \
-		* (l / pixelhiegt), img->sprite->h \
-		* (k - (img->structure->win_h - pixelhiegt) / 2) / pixelhiegt);
-		if (get_t(collor) == 0)
-			my_mlx_pixel_put(img, i + l, k, collor);
-		k++;
-	}
-}
-
-void		putsprite(t_data *img, int num)
+void			putsprite(t_data *img, int num)
 {
 	double		i;
 	int			l;
-	double		pixelhiegt;
+	double		pixelheight;
 	double		cosin;
 
 	cosin = setcos(img->structure->player_pos->player_facing, \
 	img->sprites[num].angle);
-	pixelhiegt = 0.5 * img->structure->win_h / (img->sprites[num].c * cosin);
+	pixelheight = 0.4 * img->structure->win_h / (img->sprites[num].c * cosin);
 	i = (img->structure->win_w / 2 + \
 	(img->sprites[num].angle - img->structure->player_pos->player_facing) \
-	/ (M_PI / (img->structure->win_w * 3)) - pixelhiegt / 2);
+	/ (M_PI / (img->structure->win_w * 3)) - pixelheight / 2);
 	l = 0;
-	while (l < pixelhiegt)
+	while (l < pixelheight)
 	{
 		if (i + l > 0 && img->sprites[num].c < img->wall_d[(int)(\
 		(img->structure->win_w - l - i))] && \
 		i + l < img->structure->win_w)
-		{
-			if (pixelhiegt > img->structure->win_h)
-				putlinesprite(img, i, l, pixelhiegt);
-			else
-				putlinebigsprite(img, i, l, pixelhiegt);
-		}
+			put_line_sprite(img, i, l, pixelheight);
 		l++;
 	}
 }
